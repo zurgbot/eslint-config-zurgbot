@@ -1,0 +1,52 @@
+{
+  "name": "eslint-config-zurgbot",
+  "description": "An opinionated ESLint config",
+  "version": "0.0.1",
+  "author": "Colby Fayock <hello@colbyfayock.com>",
+  "main": "index.js",
+  "files": [
+    "./index.js",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": ">=6.5.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "merge": "^1.2.1",
+    "prettier": "^1.18.2",
+    "prettier-eslint": "^9.0.0",
+    "prettier-eslint-cli": "^5.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^6.5.1"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier-eslint --eslint-config-path ./config/eslint.config.js --write '**/*.js'",
+    "lint": "eslint -c ./config/eslint.config.js . --ext .js",
+    "prepare": "cp ./src/index.js ./index.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "yarn format",
+      "yarn lint",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zurgbot/eslint-config-zurgbot"
+  },
+  "bugs": {
+    "url": "https://github.com/zurgbot/eslint-config-zurgbot/issues"
+  }
+}
