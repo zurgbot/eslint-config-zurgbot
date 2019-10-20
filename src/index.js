@@ -5,7 +5,15 @@ let rules = {
   'eol-last': ['error', 'always'],
   'linebreak-style': ['error', 'unix'],
   'max-len': ['error', { code: 120, ignoreUrls: true }],
+  'no-console': 'warn',
   'no-eval': 'error',
+  'no-warning-comments': [
+    'warn',
+    {
+      terms: ['todo', 'fixme'],
+      location: 'start'
+    }
+  ],
 
   /**
    * Syntax
@@ -27,6 +35,7 @@ let rules = {
    * @description Whitespace, tabs
    */
 
+  indent: ['error', 2],
   'space-in-parens': ['error', 'always', { exceptions: ['()', '[]', '{}'] }],
 
   /**
