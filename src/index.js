@@ -1,4 +1,4 @@
-const { loadPluginRules } = require( './lib/rules' );
+const { loadPluginExtensions, loadPluginRules } = require( './lib/rules' );
 
 let rules = {
   'arrow-parens': ['error', 'always'],
@@ -71,6 +71,6 @@ let rules = {
 };
 
 module.exports = {
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', ...loadPluginExtensions( 'eslint-plugin-react', 'plugin:react/recommended' )],
   rules
 };

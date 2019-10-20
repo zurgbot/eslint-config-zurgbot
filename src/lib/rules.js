@@ -11,11 +11,33 @@ function loadPluginRules( plugin, pluginRules = {}) {
       ...pluginRules
     };
   } catch ( e ) {
-    console.log( `Unable to find ${plugin}, skipping.` );
     return {};
   }
 }
 
 module.exports = {
+  loadPluginRules
+};
+
+/**
+ * loadPluginExtension
+ * @description Only includes the extension ID warpped in an array if the plugin can successfully be loaded
+ * @example loadPluginExtension('eslint-plugin-react', 'plugin:react/recommended')
+ */
+
+function loadPluginExtensions( plugin, extensionIds = []) {
+  if ( !Array.isArray( extensionIds )) {
+    extensionIds = [extensionIds];
+  }
+  try {
+    require( plugin );
+    return extensionIds;
+  } catch ( e ) {
+    return [];
+  }
+}
+
+module.exports = {
+  loadPluginExtensions,
   loadPluginRules
 };
