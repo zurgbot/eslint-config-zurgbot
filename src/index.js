@@ -55,7 +55,7 @@ let rules = {
    * @requires https://www.npmjs.com/package/eslint-plugin-react-hooks
    */
 
-  ...loadPluginRules( 'eslint-plugin-hooks-react', {
+  ...loadPluginRules( 'eslint-plugin-react-hooks', {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn'
   })
