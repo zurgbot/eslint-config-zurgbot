@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-zurgbot",
   "description": "An opinionated ESLint config",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "author": "Colby Fayock <hello@colbyfayock.com>",
   "main": "index.js",
   "files": [
